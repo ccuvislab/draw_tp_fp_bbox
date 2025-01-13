@@ -54,8 +54,11 @@ python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeva
 **可視化影像**
 + FedMA和FedAvg(make_bbox.py)\
   透過score分數最高的前十張影像，分別加入bbox，比較模型在同張影像上的預測成果
+  綠色:TP, 紅色:FP, 黃色:FN
+  
 + FedAvg
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/frankfurt_000001_000538_leftImg8bit_FedAvg.jpg" width="50%" >
+
 + FedMA
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/frankfurt_000001_000538_leftImg8bit_FedNA.jpg" width="50%" >
 
