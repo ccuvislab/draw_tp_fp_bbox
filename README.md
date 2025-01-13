@@ -21,4 +21,6 @@ FedMPEN
 ├── train_net_multiTeacher.py
 
 **指令執行**
-`python train_net_multiTeacher.py --eval-only --config ./evaluation/cityeval.yaml MODEL.WEIGHTS output/multi-teacher_skf2c_foggy_sourceonly_FedMAbackbone/model_final.pth`
+```
+python train_net_multiTeacher.py --eval-only --config ./evaluation/cityeval.yaml MODEL.WEIGHTS output/multi-teacher_skf2c_foggy_sourceonly_FedMAbackbone/model_final.pth
+```
