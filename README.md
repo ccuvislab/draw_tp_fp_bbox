@@ -43,20 +43,26 @@ python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeva
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/config%20file.png" width="70%" >
 
 **生成結果**
-
++ Fed_XXX_tp_fp_fn_count.txt
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_count.png" width="70%" >
+
++ Fed_XXX_tp_fp_fn_bbox.txt
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_bbox.png" width="70%" >
 
-**比較兩種模型預測差距**
-+ FedMA和FedAvg(tp_fp_score_bb.py)\
-  透過FedMA與FedAvg的TP、FP分別相減(FedMA['tp'] - FedAvg['tp'] = tp_diff, FedMA['fp'] - FedAvg['fp'] = fp_diff)，找出差異score最大(tp_diff + fp_diff)的前十張影像
+**比較兩種模型預測差距(tp_fp_score_bb.py)**
++ FedMA和FedAvg\
+  透過FedMA與FedAvg的TP、FP分別相減(tp_diff、fp_diff)，找出差異最大(tp_diff + fp_diff)的前十張影像
+
++ tp_fp_diff.txt
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_diff.png" width="70%" >
+
++ score.txt
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/score.png" width="70%" >
 
-**可視化影像**
-+ FedMA和FedAvg(make_bbox.py)\
+**可視化影像(make_bbox.py)**
++ FedMA和FedAvg\
   透過score分數最高的前十張影像，分別加入bbox，比較模型在同張影像上的預測成果\
-  綠色:TP, 紅色:FP, 黃色:FN
+  綠色=True Positive(TP), 紅色=False Positive(FP), 黃色=False Negative(FN)
   
 + FedAvg
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/frankfurt_000001_000538_leftImg8bit_FedAvg.jpg" width="50%" >
