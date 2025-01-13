@@ -5,7 +5,7 @@
 + torchvision==0.16.1
 
 **基準模型** 
-+ [FedMPEN](https://github.com/ccuvislab/FedMPEN) (若模型評估的架構中有pascal_voc_evaluation.py，即可進行pascal_voc的評估)
++ [FedMPEN](https://github.com/ccuvislab/FedMPEN)
 
 **修改檔案**
 + pascal_voc_evaluation.py
@@ -41,7 +41,6 @@ python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeva
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/config%20file.png" width="70%" >
 
 **生成結果**
-
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_count.png" width="70%" >
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_bbox.png" width="70%" >
 
