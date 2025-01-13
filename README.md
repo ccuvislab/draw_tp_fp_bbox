@@ -5,10 +5,10 @@
 + torchvision==0.16.1
 
 **基準模型** 
-+ [FedMPEN](https://github.com/ccuvislab/FedMPEN)
++ [FedMPEN(FedMA、FedAvg)](https://github.com/ccuvislab/FedMPEN)
 
 **修改檔案**
-+ pascal_voc_evaluation.py
++ pascal_voc_evaluation.py(主要)
 + trainer_sourceonly.py
 
 **修改後存放位置**
@@ -46,8 +46,17 @@ python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeva
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_bbox.png" width="70%" >
 
 **比較兩種模型預測差距**
-+ FedMA和FedAvg\
++ FedMA和FedAvg(tp_fp_score_bb.py)\
   透過FedMA與FedAvg的TP、FP分別相減(FedMA['tp'] - FedAvg['tp'] = tp_diff, FedMA['fp'] - FedAvg['fp'] = fp_diff)，找出差異score最大(tp_diff + fp_diff)的前十張影像
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_diff.png" width="70%" >
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/score.png" width="70%" >
+
+**可視化影像**
++ FedMA和FedAvg(make_bbox.py)\
+  透過score分數最高的前十張影像，分別加入bbox，比較模型在同張影像上的預測成果
++ FedAvg
+<img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/frankfurt_000001_000538_leftImg8bit_FedAvg.jpg" width="50%" >
++ FedMA
+<img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/frankfurt_000001_000538_leftImg8bit_FedNA.jpg" width="50%" >
+
 
