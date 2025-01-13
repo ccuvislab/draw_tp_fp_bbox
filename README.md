@@ -11,11 +11,12 @@
 + pascal_voc_evaluation.py
 + trainer_sourceonly.py
 
-**存放位置**
+**修改後存放位置**
 ```
 FedMPEN
-├── evaluation
-│   └── cityeval.yaml
+├── configs
+│   └── evaluation
+│       └── cityeval.yaml
 ├── pt
 │   └── engine
 │       ├── pascal_voc_evaluation.py
@@ -25,8 +26,8 @@ FedMPEN
 
 **指令執行**
 ```
-python train_net_multiTeacher.py --eval-only --config ./evaluation/cityeval.yaml MODEL.WEIGHTS output/multi-teacher_skf2c_foggy_sourceonly_FedMAbackbone/model_final.pth
+python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeval.yaml MODEL.WEIGHTS output/multi-teacher_skf2c_foggy_sourceonly_FedMAbackbone/model_final.pth
 ```
 
-**生成檔案內文**
+**生成範例**
 
