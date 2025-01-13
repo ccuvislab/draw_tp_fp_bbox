@@ -31,7 +31,7 @@ FedMPEN
 python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeval.yaml MODEL.WEIGHTS output/multi-teacher_skf2c_foggy_sourceonly_FedMAbackbone/model_final.pth
 ```
 
-**生成操作**
+**使用操作(Config File)**
 + SAVE_TP_FP_FN\
   選擇是否存取評估模型對validation影像的TP、FP、FN之數量及bbox
 + STORE_TP_FP_FN_ROOT_PATH\
