@@ -8,8 +8,9 @@
 + [FedMPEN(FedMA、FedAvg)](https://github.com/ccuvislab/FedMPEN)
 
 **修改檔案**
-+ pascal_voc_evaluation.py(主要)
-+ trainer_sourceonly.py
++ pascal_voc_evaluation.py(捕捉TP、FP、FN)
++ trainer_sourceonly.py(讓config file參數傳到pascal_voc_evaluation.py)
++ config.py(新定義參數)
 
 **修改後存放位置**
 ```
@@ -18,9 +19,10 @@ FedMPEN
 │   └── evaluation
 │       └── cityeval.yaml
 ├── pt
-│   └── engine
-│       ├── pascal_voc_evaluation.py
-│       └── trainer_sourceonly.py
+│   ├── engine
+│   │   ├── pascal_voc_evaluation.py
+│   │   └── trainer_sourceonly.py
+│   └── config.py
 ├── train_net_multiTeacher.py
 ```
 
