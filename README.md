@@ -41,7 +41,13 @@ python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeva
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/config%20file.png" width="70%" >
 
 **生成結果**
+
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_count.png" width="70%" >
 <img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_fn_bbox.png" width="70%" >
 
+**比較兩種模型預測差距**
++ FedMA和FedAvg\
+  透過FedMA與FedAvg的TP、FP分別相減(FedMA['tp'] - FedAvg['tp'] = tp_diff, FedMA['fp'] - FedAvg['fp'] = fp_diff)，找出差異score最大(tp_diff + fp_diff)的前十張影像
+<img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/tp_fp_diff.png" width="70%" >
+<img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/score.png" width="70%" >
 
