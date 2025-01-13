@@ -4,7 +4,8 @@
 + torch==2.1.1
 + torchvision==0.16.1
 
-基準模型: [FedMPEN](https://github.com/ccuvislab/FedMPEN) (若模型評估的架構中有pascal_voc_evaluation.py，即可進行pascal_voc的評估)
+**基準模型** 
++ [FedMPEN](https://github.com/ccuvislab/FedMPEN) (若模型評估的架構中有pascal_voc_evaluation.py，即可進行pascal_voc的評估)
 
 **修改檔案**
 + pascal_voc_evaluation.py
