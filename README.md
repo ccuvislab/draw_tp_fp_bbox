@@ -18,7 +18,7 @@ FedMPEN
 │   └── engine
 │       ├── pascal_voc_evaluation.py
 │       └── trainer_sourceonly.py
-├── train_net_multiTeacher.py
+└── train_net_multiTeacher.py
 
 **指令執行**
 ```
