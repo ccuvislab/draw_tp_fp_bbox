@@ -4,7 +4,7 @@
 + torch==2.1.1
 + torchvision==0.16.1
 
-**基準模型** 
+**參考模型** 
 + [FedMPEN(FedMA、FedAvg)](https://github.com/ccuvislab/FedMPEN)
 
 **修改檔案**
