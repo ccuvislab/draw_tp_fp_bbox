@@ -38,6 +38,7 @@ python train_net_multiTeacher.py --eval-only --config configs/evaluation/cityeva
   可根據評估模型的名稱，存取TP、FP、FN之數量及bbox，並統一存放在主路徑底下
 + EVAL_OVTHRESH\
   可根據想要的閾值，篩選TP、FP、FN之數量及bbox。閾值可從50、55、60、65、70、75、80、85、90、95，任選一種為標準
+<img src="https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/config%20file.png" width="50%" >
 ![config_file](https://github.com/ccuvislab/draw_tp_fp_bbox/blob/main/Pic/config%20file.png)
 
 **生成結果**
