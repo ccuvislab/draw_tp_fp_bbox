@@ -27,3 +27,6 @@ FedMPEN
 ```
 python train_net_multiTeacher.py --eval-only --config ./evaluation/cityeval.yaml MODEL.WEIGHTS output/multi-teacher_skf2c_foggy_sourceonly_FedMAbackbone/model_final.pth
 ```
+
+**生成檔案內文**
+
