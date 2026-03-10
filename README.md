@@ -1,5 +1,53 @@
 # 基於模型評估並存取預測TP、FP、FN數量及bbox座標，並使其可視化在圖像上。
 
+## 專案說明（這個 Work 在幹嘛？）
+
+本專案的目標是**評估並視覺化物件偵測模型的預測品質**，重點在於比較兩種聯邦學習模型（**FedMA** 與 **FedAvg**）在驗證影像上的預測差異。
+
+### 整體流程
+
+```
+[模型評估階段]
+FedMPEN 模型推論 (FedMA / FedAvg)
+    └─> 修改後的 pascal_voc_evaluation.py
+           └─> 對每張驗證影像，計算並儲存:
+                ├─ TP (True Positive)  : 模型正確預測到的物件框
+                ├─ FP (False Positive) : 模型預測但實際上不存在的物件框
+                └─ FN (False Negative) : 實際存在但模型沒偵測到的物件框
+
+[比較分析階段]
+tp_fp_score_bb.py
+    └─> 讀取 FedMA 與 FedAvg 各自的 count 檔
+           └─> 計算每張影像的 (tp_diff + fp_diff) 分數
+                └─> 找出差異最大的前 10 張影像 → scores.txt
+
+[視覺化階段]
+make_bbox.py
+    └─> 讀取 scores.txt 找出前 10 張影像
+           └─> 在原始影像上繪製彩色邊界框:
+                ├─ 綠色框：TP (True Positive)
+                ├─ 紅色框：FP (False Positive)
+                └─ 黃色框：FN (False Negative)
+                     └─> 輸出對比影像，直觀呈現兩種模型的預測差異
+```
+
+### 關鍵輸入與輸出
+
+| 階段 | 輸入 | 輸出 |
+|------|------|------|
+| 模型評估 | FedMPEN 模型權重、Cityscapes 驗證集 | `FedXXX_tp_fp_fn_count.txt`（各圖 TP/FP/FN 數量）、`FedXXX_tp_fp_fn_bb.txt`（各圖 bbox 座標） |
+| 比較分析 | FedMA 與 FedAvg 的 count.txt | `tp_fp_diff.txt`（差異值）、`scores.txt`（排序後分數） |
+| 視覺化 | scores.txt、bb.txt、原始影像 | 繪製 TP/FP/FN 邊界框的 JPG 影像 |
+
+### 為什麼這樣做？
+
+透過比較 FedMA 與 FedAvg 在同一張影像上的 TP 與 FP 差異，可以：
+- 找出兩種聯邦學習策略預測結果差距最大的影像
+- 直觀地看出哪種模型在特定影像上表現更好
+- 輔助分析聯邦學習聚合方式對物件偵測效果的影響
+
+
+
 **基礎環境設置**
 + torch==2.1.1
 + torchvision==0.16.1
